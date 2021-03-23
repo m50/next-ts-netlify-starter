@@ -6,8 +6,11 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>NextJS TS Starter</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta charSet="utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
       <main className={styles.main}>

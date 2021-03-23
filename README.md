@@ -10,6 +10,8 @@ ___
 ## General details and features
 
 - Framework: [NextJS](https://nextjs.com/)
+- Markdown Rendering: [React Markdown](https://github.com/remarkjs/react-markdown)
+- Code Highlighting: [React Syntax Highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
 - Hosting: [Netlify](https://www.netlify.com)
 - CMS: [Netlify CMS](https://www.netlifycms.org)
 - CI/CD: [Github Actions](https://github.com/features/actions)
