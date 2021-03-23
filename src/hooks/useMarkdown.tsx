@@ -7,10 +7,11 @@ import toc from 'remark-toc';
 import remarkSlug from 'remark-slug';
 
 interface Props {
-  className: string;
+  className?: string;
   children: string;
 }
 type UseMarkdown = (style: Record<string, string>, allowDangerousHtml: boolean) => React.FC<Props>;
+
 /**
  * This hook provides a Markdown renderer to use in your page.
  * Syntax highlighting from react-syntax-highlighter.
@@ -20,6 +21,26 @@ type UseMarkdown = (style: Record<string, string>, allowDangerousHtml: boolean) 
  *  - [remark-slug](https://github.com/remarkjs/remark-slug)
  * General styling is provided by [@tailwindcss/typography](https://github.com/tailwindlabs/tailwindcss-typography).
  *  The `prose` class is applied by default. Use the prose modifier classes to adjust the styling.
+ * Use grey-matter to get the frontmatter and the content from a markdown file, then pass
+ *  the content as the child of the Markdown component.
+ *
+ * example:
+ * ```js
+ * import React from 'react';
+ * import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+ * import { useMarkdown } from 'hooks/useMarkdown';
+ *
+ * export const Component = () => {
+ *   const Markdown = useMarkdown(dark);
+ *   const markdown = `
+ * # Title
+ *
+ * Hello there!
+ * `;
+ *
+ *   return <Markdown>{markdown}</Markdown>;
+ * };
+ * ```
  *
  * @param style The style from react-syntax-highlighter to apply to the code in the markdown.
  * @param allowDangerousHtml Whether to allow dangerous HTML in your markdown.
