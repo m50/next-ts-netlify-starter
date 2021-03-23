@@ -1,5 +1,11 @@
 module.exports = {
-  purge: ['./src/**/*.{js,ts,jsx,tsx}'],
+  future: {
+    purgeLayersByDefault: true,
+  },
+  purge: {
+    layers: ['utilities'],
+    content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  },
   theme: {
   },
   variants: {
