@@ -20,7 +20,7 @@ export default function Home() {
 
         <p className={styles.description}>
           Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+          <code className={styles.code}>src/pages/index.js</code>
         </p>
 
         <div className={styles.grid}>
@@ -42,21 +42,16 @@ export default function Home() {
             <p>Discover and deploy boilerplate example Next.js projects.</p>
           </a>
 
-          <a href="https://vercel.com/new" className={styles.card}>
+          <a href="https://netlify.com" className={styles.card}>
             <h3>Deploy &rarr;</h3>
             <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+              Instantly deploy your Next.js site to a public URL with Netlify.
             </p>
           </a>
         </div>
       </main>
 
-      <footer className={styles.footer}>
-        <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+      <footer className={styles.footer} />
     </div>
   );
 }
