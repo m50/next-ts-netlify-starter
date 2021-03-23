@@ -1,34 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NextJS TypeScript Starter
 
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://oss.ninja/mit?organization=Marisa%20Clardy)
+
+An opinionated starter template for building a TypeScript NextJS app on Netlify.
+
+This comes with TypeScript, Github Actions, ESLint, Jest, TailwindCSS, and Netlify all setup out of the box.
+
+___
+## General details and features
+
+- Framework: [NextJS](https://nextjs.com/)
+- Hosting: [Netlify](https://www.netlify.com)
+- CMS: [Netlify CMS](https://www.netlifycms.org)
+- CI/CD: [Github Actions](https://github.com/features/actions)
+- Styling: [TailwindCSS](https://tailwindcss.com)
+- Language: [TypeScript](https://www.typescriptlang.org)
+- Lint: [ESLint](https://eslint.org) with opinionated form of [AirBNB rules](https://www.npmjs.com/package/eslint-config-airbnb)
+- Tests: [Jest](https://jestjs.io)
+
+___
 ## Getting Started
 
-First, run the development server:
+Use this deploy button to get your own copy of the repository.
 
-```bash
-npm run dev
-# or
-yarn dev
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/m50/next-ts-netlify-starter&stack=cms)
+
+This button will do the following:
+
+Connect to your GitHub account and create a new repository with the name you specify
+- Deploy your copy of the repository and setup continuous deployment
+- Send an invite to the email address associated with your Netlify account
+- Accept the invite, set your password, then navigate to `/admin/` on your site to log in.
+
+Now you're all set, and you can start customizing your static site!
+
+## Local Development
+
+After using the deploy button above, clone your copy of the repository and run:
+
+```sh
+$ yarn install
+$ yarn start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+You can start editing the page by modifying `src/pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+API routes can be accessed on http://localhost:3000/api/hello. This endpoint can be edited in `src/pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The `src/pages/api` directory is mapped to `/api/*`. Files in this directory are treated as API routes instead of React pages.
 
-## Learn More
+___
+## License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Released under the MIT License.
