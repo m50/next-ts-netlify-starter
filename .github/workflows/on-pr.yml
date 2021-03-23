@@ -81,6 +81,11 @@ jobs:
   deploy:
     name: Deploy to Netlify
     runs-on: ubuntu-latest
+    needs:
+      - test
+      - lint
+      - types
+      - build
     steps:
       - uses: actions/checkout@v1
       - uses: nelonoel/branch-name@v1.0.1 # Sets the branch name as environment variable
@@ -95,4 +100,4 @@ jobs:
           authToken: ${{ secrets.GITHUB_TOKEN }}
           context: Netlify preview
           state: success
-          target_url: https://${{ env.BRANCH_NAME }}--my-site.netlify.app
+          target_url: https://${{ env.BRANCH_NAME }}--${{ env.NETLIFY_SITE_NAME }}.netlify.app
