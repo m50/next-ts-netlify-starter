@@ -7,13 +7,14 @@ import toc from 'remark-toc';
 import remarkSlug from 'remark-slug';
 
 interface Props {
-  className?: string;
   children: string;
+  style: Record<string, string>;
+  allowDangerousHtml?: boolean;
+  className?: string;
 }
-type UseMarkdown = (style: Record<string, string>, allowDangerousHtml: boolean) => React.FC<Props>;
 
 /**
- * This hook provides a Markdown renderer to use in your page.
+ * This is a Markdown renderer to use in your page.
  * Syntax highlighting from react-syntax-highlighter.
  * Additional plugins:
  *  - [remark-gfm](https://github.com/remarkjs/remark-gfm)
@@ -28,10 +29,9 @@ type UseMarkdown = (style: Record<string, string>, allowDangerousHtml: boolean) 
  * ```js
  * import React from 'react';
  * import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
- * import { useMarkdown } from 'hooks/useMarkdown';
+ * import { Markdown } from 'components/Markdown';
  *
  * export const Component = () => {
- *   const Markdown = useMarkdown(dark);
  *   const markdown = `
  * # Title
  *
@@ -42,12 +42,13 @@ type UseMarkdown = (style: Record<string, string>, allowDangerousHtml: boolean) 
  * };
  * ```
  *
- * @param style The style from react-syntax-highlighter to apply to the code in the markdown.
- * @param allowDangerousHtml Whether to allow dangerous HTML in your markdown.
- * @returns Markdown component.
+ * @param props.style The style from react-syntax-highlighter to apply to the code in the markdown.
+ * @param props.allowDangerousHtml Whether to allow dangerous HTML in your markdown.
+ * @param props.className Any additional classes you want to add to the markdown component.
+ * @param children The markdown text that you want to render in the markdown.
  */
-export const useMarkdown: UseMarkdown = (style, allowDangerousHtml = false) => {
-  const renderers = {
+export const Markdown: React.FC<Props> = ({ className, children, allowDangerousHtml, style }) => {
+  const renderers: ReactMarkdown.ReactMarkdownPropsBase['renderers'] = {
     code: ({ language, value }) => (
       <SyntaxHighlighter language={language} style={style}>
         {value}
@@ -62,17 +63,16 @@ export const useMarkdown: UseMarkdown = (style, allowDangerousHtml = false) => {
   ];
 
   if (allowDangerousHtml) {
-    return ({ children, className }) => (
+    return (
       <ReactMarkdownHtml className={`prose ${className}`} plugins={plugins} renderers={renderers} allowDangerousHtml>
         {children}
       </ReactMarkdownHtml>
     );
   }
 
-  return ({ children, className }) => (
+  return (
     <ReactMarkdown className={`prose ${className}`} plugins={plugins} renderers={renderers}>
       {children}
     </ReactMarkdown>
   );
 };
-
