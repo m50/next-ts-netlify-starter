@@ -44,7 +44,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': ['error'],
     '@typescript-eslint/no-use-before-define': ['error'],
     'import/no-extraneous-dependencies': ['error', {
-      devDependencies: ['**/*.test.*', './lib/node-only/*'],
+      devDependencies: ['**/*.test.*', '**/*.spec.*', './lib/node-only/*'],
       optionalDependencies: false,
       peerDependencies: false,
     }],

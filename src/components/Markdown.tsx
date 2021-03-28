@@ -38,7 +38,7 @@ interface Props {
  * Hello there!
  * `;
  *
- *   return <Markdown>{markdown}</Markdown>;
+ *   return <Markdown style={dark}>{markdown}</Markdown>;
  * };
  * ```
  *
@@ -64,14 +64,19 @@ export const Markdown: React.FC<Props> = ({ className, children, allowDangerousH
 
   if (allowDangerousHtml) {
     return (
-      <ReactMarkdownHtml className={`prose ${className}`} plugins={plugins} renderers={renderers} allowDangerousHtml>
+      <ReactMarkdownHtml
+        className={`prose ${className ?? ''}`}
+        plugins={plugins}
+        renderers={renderers}
+        allowDangerousHtml
+      >
         {children}
       </ReactMarkdownHtml>
     );
   }
 
   return (
-    <ReactMarkdown className={`prose ${className}`} plugins={plugins} renderers={renderers}>
+    <ReactMarkdown className={`prose ${className ?? ''}`} plugins={plugins} renderers={renderers}>
       {children}
     </ReactMarkdown>
   );

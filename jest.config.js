@@ -35,4 +35,5 @@ module.exports = {
     'jsx'
   ],
   testURL: 'http://localhost',
+  snapshotResolver: '<rootDir>/snapshotResolver.js',
 };
