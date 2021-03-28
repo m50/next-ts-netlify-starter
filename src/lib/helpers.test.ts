@@ -1,4 +1,4 @@
-import { slug, isClientSide, isProduction, isDeployed } from './helpers';
+import { slug, isClientSide, isProduction, isDeployed, isServerSide } from './helpers';
 
 describe('helpers', () => {
   test.concurrent('slug()', async () => {
@@ -9,6 +9,10 @@ describe('helpers', () => {
 
   test.concurrent('isClientSide()', async () => {
     expect(isClientSide()).toBe(true);
+  });
+
+  test.concurrent('isServerSide()', async () => {
+    expect(isServerSide()).toBe(false);
   });
 
   test.concurrent('isProduction()', async () => {
