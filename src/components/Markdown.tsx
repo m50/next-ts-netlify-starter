@@ -28,7 +28,7 @@ interface Props {
  * example:
  * ```js
  * import React from 'react';
- * import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+ * import { dark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
  * import { Markdown } from 'components/Markdown';
  *
  * export const Component = () => {
