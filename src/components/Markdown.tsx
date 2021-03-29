@@ -50,7 +50,7 @@ interface Props {
 export const Markdown: React.FC<Props> = ({ className, children, allowDangerousHtml, style }) => {
   const renderers: ReactMarkdown.ReactMarkdownPropsBase['renderers'] = {
     code: ({ language, value }) => (
-      <SyntaxHighlighter language={language} style={style}>
+      <SyntaxHighlighter language={language} style={style} wrapLines showLineNumbers>
         {value}
       </SyntaxHighlighter>
     ),
