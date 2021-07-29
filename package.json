@@ -19,7 +19,7 @@
     "lint:types": "tsc --noEmit --pretty"
   },
   "dependencies": {
-    "@headlessui/react": "^0.3.1",
+    "@headlessui/react": "^1.4.0",
     "gray-matter": "^4.0.2",
     "next": "^10",
     "react": "^17",
